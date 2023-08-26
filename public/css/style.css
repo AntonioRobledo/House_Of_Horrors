@@ -88,13 +88,29 @@ body {
     transition: margin-left .5s;
     padding: 16px;
 }
-  
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+    padding-right: 10px;
+}
 
 .searchBar {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 50px;
+}
+
+.searchBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 18px;
+    margin: 15px;
 }
 
 .burgerBtn {
@@ -104,7 +120,8 @@ body {
 }
 
 .button {
-    top: 20px;
+    top: 10px;
+    border-radius: 10px;
 }
 
 h2 {
