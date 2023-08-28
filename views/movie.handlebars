@@ -5,13 +5,23 @@
   <title>{{ movie.title }}</title>
 
 </head>
-<body>
-  <div>
-  <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="{{ movie.title }} poster">
-  <p>{{ movie.overview }}</p>
-  <p>Release date: {{ movie.release_date }}</p>
-  <p>Runtime: {{ movie.runtime }} minutes</p>
-  <p>Rating: {{ movie.vote_average }}/10 ({{ movie.vote_count }} votes)</p>
-  <a href="/">Add to Watchlist</a>
-  <a href="/">Back to Homepage</a>
+<body class="movieSearchContainer">
+  <div class="movieSearchPage">
+    <div class="moviePosterCard">
+  <img class="moviePosterImg" src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="{{ movie.title }} poster">
+    </div>
+  <div class="movieInfoContainer">
+  <div class="moviePosterInfo">
+    <p class="movieInfoTitle">{{movie.title}}</p>
+    <p><strong>Synopsis: </strong>{{ movie.overview }}</p>
+    <p><strong>Release date:</strong> {{ movie.release_date }}</p>
+    <p><strong>Runtime:</strong> {{ movie.runtime }} minutes</p>
+    <p><strong>Rating:</strong> {{ movie.vote_average }}/10 ({{ movie.vote_count }} votes)</p>
+  </div>
+  </div>
+    </div>
+  <div class="addToWatchlist">
+    <a href="/">Add to Watchlist</a>
+    <a href="/">Back to Homepage</a>
+  </div>
 </body>
