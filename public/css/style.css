@@ -5,6 +5,7 @@
 
 html {
     height: 100vh;
+    width: 100%;
 }
 
 body {
@@ -152,6 +153,9 @@ h2 {
 footer {
     padding: 4rem;
     text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
 }
 
 a {
@@ -508,8 +512,9 @@ label {
 .movieSearchPage {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
-    height: 0%;
+    height: 64vh;
 }
   
   /* Individual movie card styles */
@@ -525,6 +530,7 @@ label {
   .moviePosterImg {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     width: 400px;
     height: 500px;
   }
@@ -537,18 +543,18 @@ label {
 
 .movieInfoContainer {
     display: flex;
-    align-items: center;
+    justify-content: center;
+   
 }
 
 .moviePosterInfo {
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    align-items: center;
     border-radius: 10px;
     margin: 10px;
     padding: 10px;
-    width: 375px;
+    width: 340px;
     height: 450px;
     background-color: #dce5e6;
 }
@@ -574,12 +580,22 @@ label {
 }
 
   @media (max-width: 767px) {
-    .movie-card {
-      width: calc(50% - 10px);
+    .movie-card,
+    .movieSearchPage {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
     }
   }
   @media (max-width: 479px) {
-    .movie-card {
-      width: 100%;
+    .movie-card,
+    .movieSearchPage {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: right;
     }
   }

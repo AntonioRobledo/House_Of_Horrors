@@ -2,27 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
     <title>My Watchlist</title>
 
 </head>
+
 <body class="watch-backgrnd">
     <h1 class="titles">My Watchlist</h1>
     <div class="movieGrid">
-    {{#each movies}}
+    {{#each movie}}
         <div class="movie{{this.id}}">
-        <h4> {{this.movie_title}}</h4>
-       
-       
-     
+        <h4> {{this.movie_title}}</h4> 
+        </div>
+    {{/each}}
     </div>
- {{/each}}
-    </div>
+    {{!-- <a href="/">Back to browsing</a> --}}
 </body>
 </html>
+
 <script>
   let boxes = document.getElementsByClassName("subImg")
   let favs = []
-  for(let i = 0; i , boxes.length; i++)
+  for(let i = 0; i < boxes.length-1; i++)
   {
     boxes[i].addEventListener("click", function(){
         favs.push(boxes[i])

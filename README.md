@@ -38,7 +38,7 @@ SCREENSHOT OF HOMEPAGE BELOW
 * Nathaniel Vanderpoort 
 * Daniella Ferrufino 
 * Changhyun Cho 
-* Antonio Robledo-Yasaga 
+* Antonio Robledo-Ysasaga 
 * Esfan Behbehani 
 
 Link to API used to populate horror movies:
