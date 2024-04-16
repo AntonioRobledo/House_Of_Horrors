@@ -8,7 +8,7 @@ const axios = require('axios');
 const API_KEY = 'b92f9ace24e14d3e4ad0aecc18146092';
 // checks if user is authorized 
 
-//nothing here
+
 router.get('/', withAuth, async (req, res) => {
 
     console.log("check this", req.session, req.session.user_id)
@@ -75,4 +75,5 @@ router.get('/watchlist.handlebars', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 module.exports = router;
