@@ -7,9 +7,9 @@ const compression = require('compression');
 const hbs = exphbs.create({ });
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
 const Review = require("./models/Review");
 const Watchlist = require("./models/Watchlist");
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -34,17 +34,15 @@ const sess = {
 
 app.use(session(sess));
 
-app.engine('.handlebars', hbs.engine);
-app.set('view engine', '.handlebars');
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(compression());
 app.use(routes);
-
-  
-
 
   app.get("/reviews", async (req, res)=>{
     try{
@@ -53,8 +51,8 @@ app.use(routes);
         let formatData = [];
 
         //iterate through results to find the data
-        result.map(r=>{
-            //i addeed it to array
+        result.map(r => {
+            //i added it to array
             formatData.push(r.dataValues)
         })
     
@@ -67,7 +65,6 @@ app.use(routes);
     } catch (e){
         console.log("Error", e)
     }
-
    
   })
 
@@ -93,7 +90,6 @@ app.use(routes);
     }
   })
 
-
   app.post("/api/watchlist", async (req, res)=>{
     //req.body.rating
     //req.body.content
@@ -116,7 +112,6 @@ app.use(routes);
         console.log("error", e)
     }
   })
-
 
   sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on port ${PORT}!`));

@@ -8,7 +8,6 @@ const axios = require('axios');
 const API_KEY = 'b92f9ace24e14d3e4ad0aecc18146092';
 // checks if user is authorized 
 
-
 router.get('/', withAuth, async (req, res) => {
 
     console.log("check this", req.session, req.session.user_id)
@@ -26,16 +25,6 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-    
-        res.redirect('/');
-        return;
-    }
-    res.render('login');
-});
-
-
 // renders about page
 router.get('/about.handlebars', async (req, res) => {
     res.render('about');
@@ -51,11 +40,12 @@ router.get('/reviews.handlebars', async (req, res) => {
 });
 // renders watchlist page
 router.get('/watchlist.handlebars', async (req, res) => {
-    console.log("are you getting here?")
-        //get  movie list
+    res.render('watchlist');
+});
+        //get movie list
         //console.log("is the user in here?",req.session,  req.session.user_id)
 
-      try {
+/*       try {
         const watchData = await Watchlist.findAll({
            where: {user_id: req.session.user_id}
            
@@ -74,6 +64,15 @@ router.get('/watchlist.handlebars', async (req, res) => {
         console.log(err)
         res.status(500).json(err);
     }
+}); */
+
+// Login route
+router.get('/login', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
 });
 
 module.exports = router;

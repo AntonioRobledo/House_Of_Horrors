@@ -378,15 +378,18 @@ img {
 }
 
 .reviewForm {
-    position: relative;
-    top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 20%;
+    height: auto;
 }
+
 .media{
     padding: 20px;
 }
 form {
     position: relative;
-
 }
 
 label {
@@ -473,7 +476,11 @@ label {
 .reviewList > div h4 {
     margin-bottom: 5px;
 }
-.make1 img,.make2 img,.make3 img,.make4 img,.make5 img {
+.make1 img,
+.make2 img,
+.make3 img,
+.make4 img,
+.make5 img {
     width: 20px;
 }
 .movieGrid{
